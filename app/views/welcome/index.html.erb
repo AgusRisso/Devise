@@ -1,0 +1,11 @@
+
+<div id="bienvenida">
+<% if user_signed_in? %>
+	 Bienvenido <%= current_user.email %>
+ 	<p><%= link_to "Modificar perfil",edit_user_registration_path%>
+	<p><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></p>
+<% else %>
+	<p><%= link_to "Crea una cuenta", new_user_registration_path, class: 'btn btn-success btn-sm' %></p>
+	<p><%= link_to "Logueate", new_user_session_path,  class: 'btn btn-success btn-sm' %></p>
+<%end%>
+</div>
